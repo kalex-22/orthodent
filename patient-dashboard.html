@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Angelica C. Edralin Dental Clinic | Patient Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+  <aside class="sidebar">
+    <a class="brand sidebar-brand" href="patient-dashboard.html">
+      <span class="brand-mark">A</span>
+      <span>ANGELICA C. EDRALIN<small>PATIENT PORTAL</small></span>
+    </a>
+    <div class="nav-label">YOUR SPACE</div>
+    <a class="nav-item active" href="#overview">▦ <span>Overview</span></a>
+    <a class="nav-item" href="#appointments">▤ <span>My appointments</span></a>
+    <a class="nav-item" href="#payments">◇ <span>Payments</span></a>
+
+    <div class="sidebar-bottom">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
+      <div class="help-card">
+        <strong>Need help?</strong>
+        <p>Contact the clinic for appointment questions.</p>
+        <span>Angelica C. Edralin Dental Clinic · Mabini</span>
+      </div>
+      <button class="nav-item logout" data-logout>↪ <span>Sign out</span></button>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dash-top">
+      <div>
+        <span class="eyebrow" id="patientPageEyebrow">PATIENT PORTAL / OVERVIEW</span>
+        <h1 id="patientGreeting">Good day.</h1>
+        <p class="muted" id="patientPageDescription">Here is your dental care at a glance.</p>
+      </div>
+      <div class="profile-chip">
+        <span class="avatar" id="patientAvatar">P</span>
+        <span>
+          <strong id="patientNameTop">Patient</strong>
+          <small>Patient account</small>
+        </span>
+      </div>
+    </header>
+
+    <section id="overview" class="patient-view patient-overview">
+    <section class="welcome-banner">
+      <div>
+        <span class="eyebrow light">A HEALTHIER SMILE STARTS HERE</span>
+        <h2>Make time for your smile.</h2>
+        <p>Choose a service and send an appointment request. The clinic will confirm your schedule.</p>
+      </div>
+      <div class="banner-art" aria-hidden="true">
+        <svg viewBox="0 0 220 220" role="presentation">
+          <circle class="tooth-halo" cx="110" cy="110" r="78"></circle>
+          <path class="tooth-outline" d="M110 57c-18-15-49-7-48 24 1 23 10 34 16 55 6 22 9 47 21 47 9 0 7-35 18-35s9 35 18 35c12 0 15-25 21-47 6-21 15-32 16-55 1-31-30-39-48-24-7 6-7 6-14 0Z"></path>
+          <path class="tooth-detail" d="M84 83c5-8 14-11 23-8M136 83c-5-8-14-11-23-8"></path>
+          <path class="banner-sparkle sparkle-one" d="M36 43v24M24 55h24"></path>
+          <path class="banner-sparkle sparkle-two" d="M183 34v16M175 42h16"></path>
+          <circle class="banner-orbit-dot" cx="177" cy="157" r="4"></circle>
+        </svg>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span class="stat-icon">▤</span>
+        <small>Total requests</small>
+        <strong id="patientTotal">0</strong>
+        <span class="stat-foot">Your appointment records</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon mint">✓</span>
+        <small>Approved</small>
+        <strong id="patientApproved">0</strong>
+        <span class="stat-foot">Confirmed by the clinic</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon amber">◷</span>
+        <small>Pending</small>
+        <strong id="patientPending">0</strong>
+        <span class="stat-foot">Awaiting clinic review</span>
+      </article>
+    </section>
+
+    <section id="services" class="panel patient-services-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">CARE AT OUR CLINIC</span>
+          <h2>Dental procedures</h2>
+          <p class="muted">Explore our services and estimated fees. Final pricing is confirmed by the dentist after assessment.</p>
+        </div>
+      </div>
+      <div class="procedure-grid">
+        <a class="procedure-card patient-procedure-card" href="#book" data-service="Dental check-up"><span>01</span><h3>Dental check-up</h3><p>Routine oral health examination.</p><div class="procedure-estimate"><small>Estimated price</small><strong>₱300–₱700</strong></div><small class="procedure-choose">Choose this service →</small></a>
+        <a class="procedure-card patient-procedure-card" href="#book" data-service="Tooth extraction"><span>02</span><h3>Tooth extraction</h3><p>Consultation and extraction service.</p><div class="procedure-estimate"><small>Simple extraction estimate</small><strong>₱500–₱3,000</strong></div><small class="procedure-choose">Choose this service →</small></a>
+        <a class="procedure-card patient-procedure-card" href="#book" data-service="Dental cleaning"><span>03</span><h3>Dental cleaning</h3><p>Professional cleaning appointment.</p><div class="procedure-estimate"><small>Routine cleaning estimate</small><strong>₱800–₱1,500</strong></div><small class="procedure-choose">Choose this service →</small></a>
+        <a class="procedure-card patient-procedure-card" href="#book" data-service="Orthodontic consultation"><span>04</span><h3>Orthodontic consultation</h3><p>Braces and alignment consultation.</p><div class="procedure-estimate"><small>Initial consultation estimate</small><strong>₱300–₱700</strong></div><small class="procedure-choose">Choose this service →</small></a>
+        <a class="procedure-card patient-procedure-card" href="#book" data-service="Braces adjustment"><span>05</span><h3>Braces adjustment</h3><p>Follow-up orthodontic visit.</p><div class="procedure-estimate"><small>Per adjustment estimate</small><strong>₱500–₱1,500</strong></div><small class="procedure-choose">Choose this service →</small></a>
+        <a class="procedure-card patient-procedure-card" href="#book" data-service="Teeth whitening"><span>06</span><h3>Teeth whitening</h3><p>Cosmetic dental service consultation.</p><div class="procedure-estimate"><small>In-clinic session estimate</small><strong>₱6,000–₱15,000</strong></div><small class="procedure-choose">Choose this service →</small></a>
+      </div>
+    </section>
+    </section>
+
+    <section id="book" class="panel patient-view">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">PLAN YOUR VISIT</span>
+          <h2>Request an appointment</h2>
+          <p class="muted">Select a service and your preferred date and time.</p>
+        </div>
+        <button class="dialog-close" id="bookingDialogClose" type="button" aria-label="Close appointment form">×</button>
+      </div>
+
+      <form id="bookingForm" class="booking-grid">
+        <label>Dental procedure
+          <select id="procedure" required>
+            <option value="">Choose a service</option>
+            <option>Dental check-up</option>
+            <option>Tooth extraction</option>
+            <option>Dental cleaning</option>
+            <option>Orthodontic consultation</option>
+            <option>Braces adjustment</option>
+            <option>Teeth whitening</option>
+          </select>
+        </label>
+
+        <div class="date-picker-field">
+          <label for="appointmentDate">Preferred date</label>
+          <div class="date-input-wrap">
+            <input id="appointmentDate" type="date" required>
+            <button id="holidayCalendarToggle" class="calendar-toggle" type="button" aria-label="Open date calendar" aria-expanded="false" aria-controls="holidayCalendar">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2.5"></rect><path d="M7.5 3v4M16.5 3v4M3.5 9.5h17"></path></svg>
+            </button>
+          </div>
+          <div id="holidayCalendar" class="holiday-calendar" aria-label="Philippine holidays calendar" hidden></div>
+        </div>
+
+        <label>Preferred time
+          <select id="appointmentTime" required>
+            <option value="">Choose time</option>
+            <option>09:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>01:00 PM</option>
+            <option>02:00 PM</option>
+            <option>03:00 PM</option>
+          </select>
+        </label>
+
+        <label>Payment preference
+          <select id="paymentMethod" required>
+            <option value="">Choose method</option>
+            <option>Cash at clinic</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="GCash">GCash</option>
+            <option value="Maya">Maya</option>
+          </select>
+        </label>
+
+        <div class="full-width payment-details" id="paymentDetails" hidden aria-live="polite">
+          <div class="payment-qr" id="paymentQr" hidden>
+            <img id="gcashQrImage" class="payment-qr-image" src="images/gcashqr.jpeg" alt="Angelica C. Edralin Dental Clinic GCash QR code" hidden>
+            <img id="mayaQrImage" class="payment-qr-image" src="images/paymayaqr.jpeg" alt="Angelica C. Edralin Dental Clinic Maya QR code" hidden>
+            <div>
+              <strong id="paymentQrTitle">Payment QR</strong>
+              <p id="paymentQrMessage">Ask the clinic for its official payment QR code.</p>
+            </div>
+          </div>
+          <p class="payment-transfer" id="paymentTransfer" hidden>Contact the clinic for its bank name, account name, and account number.</p>
+          <label class="payment-proof" id="paymentProofField" hidden>
+            Screenshot proof of payment
+            <input id="paymentProof" type="file" accept="image/png,image/jpeg,image/webp">
+            <span class="tiny muted">Required for online payment. Images are resized before saving.</span>
+            <img id="paymentProofPreview" class="payment-proof-preview" alt="Selected payment proof preview" hidden>
+          </label>
+        </div>
+
+        <div class="full-width form-actions">
+          <p class="tiny muted">Your request stays pending until reviewed by clinic staff.</p>
+          <button class="btn btn-primary" type="submit">Submit request <span>→</span></button>
+        </div>
+      </form>
+      <div class="form-message" id="bookingMessage" role="status"></div>
+    </section>
+
+    <section id="appointments" class="panel patient-view">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">YOUR ACTIVITY</span>
+          <h2>My appointments</h2>
+        </div>
+        <span class="muted tiny">Latest requests first</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Procedure</th>
+              <th>Date & time</th>
+              <th>Status</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+          <tbody id="patientAppointments">
+            <tr><td colspan="4" class="empty-cell">No appointments yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="payments" class="panel patient-view">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">PAYMENT RECORDS</span>
+          <h2>Payment information</h2>
+          <p class="muted">Online payment submissions are reviewed by the clinic.</p>
+        </div>
+      </div>
+      <div class="payment-note">
+        <span>◇</span>
+        <div>
+          <strong>Payment safety reminder</strong>
+          <p>This prototype records payment preference only. It does not process money. Never enter PINs, passwords, or full card details.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="dash-footer">
+      Angelica C. Edralin Dental Clinic · Mabini, Batangas
+      <span>Handle patient information confidentially.</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

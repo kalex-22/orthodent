@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Angelica C. Edralin Dental Clinic | Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page admin-dashboard">
+  <aside class="sidebar">
+    <a class="brand sidebar-brand" href="admin-dashboard.html">
+      <span class="brand-mark">A</span>
+      <span>ANGELICA C. EDRALIN<small>ADMIN CONSOLE</small></span>
+    </a>
+    <div class="nav-label">WORKSPACE</div>
+    <a class="nav-item active" href="#overview">▦ <span>Dashboard</span></a>
+    <a class="nav-item" href="#manage-appointments">▤ <span>Appointments</span></a>
+    <a class="nav-item" href="#schedule">▦ <span>Schedule</span></a>
+    <a class="nav-item" href="#payments">◇ <span>Payments</span></a>
+    <a class="nav-item" href="#analytics">◫ <span>Analytics</span></a>
+
+    <div class="sidebar-bottom">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
+      <div class="help-card">
+        <strong>Clinic operations</strong>
+        <p>Keep schedules and records up to date.</p>
+        <span>Authorized staff</span>
+      </div>
+      <button class="nav-item logout" data-logout>↪ <span>Sign out</span></button>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dash-top">
+      <div>
+        <span class="eyebrow">ADMIN CONSOLE / OVERVIEW</span>
+        <h1>Clinic dashboard</h1>
+        <p class="muted">Monitor bookings, schedules, procedures, and payment records.</p>
+      </div>
+      <div class="profile-chip">
+        <span class="avatar admin-avatar">A</span>
+        <span>
+          <strong>Clinic Administrator</strong>
+          <small>Authorized staff</small>
+        </span>
+      </div>
+    </header>
+
+    <section id="overview" class="admin-overview">
+      <div class="stats-grid admin-stats">
+      <article class="stat-card">
+        <span class="stat-icon">▤</span>
+        <small>Total appointments</small>
+        <strong id="adminTotal">0</strong>
+        <span class="stat-foot">All recorded requests</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon amber">◷</span>
+        <small>Pending review</small>
+        <strong id="adminPending">0</strong>
+        <span class="stat-foot">Need a decision</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon mint">✓</span>
+        <small>Approved</small>
+        <strong id="adminApproved">0</strong>
+        <span class="stat-foot">Confirmed appointments</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon violet">₱</span>
+        <small>Recorded payments</small>
+        <strong id="adminPaid">₱0</strong>
+        <span class="stat-foot">Verified demo records</span>
+      </article>
+      </div>
+
+      <section class="admin-widget-grid" aria-label="Clinic daily summary">
+        <article class="panel widget-panel">
+          <div class="panel-heading"><div><span class="eyebrow">UP NEXT</span><h2>Next patient details</h2></div></div>
+          <div id="nextPatientDetails" class="next-patient-details"><p class="muted">No upcoming appointments.</p></div>
+        </article>
+        <article class="panel widget-panel">
+          <div class="panel-heading"><div><span class="eyebrow">TODAY</span><h2>Today's appointments <span class="widget-count" id="todayAppointmentCount">0</span></h2></div></div>
+          <div id="todayAppointments" class="today-appointment-list"><p class="muted">No appointments scheduled today.</p></div>
+        </article>
+        <article class="panel widget-panel">
+          <div class="panel-heading"><div><span class="eyebrow">PATIENT RECORDS</span><h2>Patient totals</h2></div></div>
+          <div class="patient-total-block"><span id="patientsThisMonth">0</span><small>Patients this month</small></div>
+          <div class="patient-total-block all-time"><span id="patientsAllTime">0</span><small>Total patients all time</small></div>
+        </article>
+        <article class="panel widget-panel earnings-widget">
+          <div class="panel-heading"><div><span class="eyebrow">VERIFIED PAYMENTS</span><h2>Earnings</h2></div></div>
+          <div class="earning-block"><strong id="earningsThisMonth">₱0</strong><small>This month so far</small></div>
+          <div class="earning-block"><strong id="earningsPreviousMonth">₱0</strong><small>Previous month</small></div>
+          <p class="tiny muted">Based on payments marked verified.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">SERVICE CATALOG</span>
+            <h2>Dental procedures</h2>
+            <p class="muted">Example service list. Prices should be confirmed by the clinic.</p>
+          </div>
+        </div>
+        <div class="procedure-grid">
+          <article class="procedure-card">
+            <span>01</span><h3>Dental check-up</h3>
+            <p>Routine oral health examination.</p>
+          </article>
+          <article class="procedure-card">
+            <span>02</span><h3>Tooth extraction</h3>
+            <p>Consultation and extraction service.</p>
+          </article>
+          <article class="procedure-card">
+            <span>03</span><h3>Dental cleaning</h3>
+            <p>Professional cleaning appointment.</p>
+          </article>
+          <article class="procedure-card">
+            <span>04</span><h3>Orthodontic consultation</h3>
+            <p>Braces and alignment consultation.</p>
+          </article>
+          <article class="procedure-card">
+            <span>05</span><h3>Braces adjustment</h3>
+            <p>Follow-up orthodontic visit.</p>
+          </article>
+          <article class="procedure-card">
+            <span>06</span><h3>Teeth whitening</h3>
+            <p>Cosmetic dental service consultation.</p>
+          </article>
+        </div>
+      </section>
+
+    </section>
+
+    <section id="manage-appointments" class="panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">SCHEDULING</span>
+          <h2>Appointment requests</h2>
+          <p class="muted">Review each request and update its status.</p>
+        </div>
+        <button class="btn btn-outline btn-small" id="exportCsv">Export CSV ↓</button>
+      </div>
+
+      <div class="toolbar">
+        <input id="appointmentSearch" placeholder="Search patient or procedure..." aria-label="Search appointments">
+        <select id="statusFilter" aria-label="Filter status">
+          <option value="All">All statuses</option>
+          <option>Pending</option>
+          <option>Approved</option>
+          <option>Rejected</option>
+          <option>Completed</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>Procedure</th>
+              <th>Preferred schedule</th>
+              <th>Payment</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminAppointments">
+            <tr><td colspan="6" class="empty-cell">No appointment requests yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-message" id="adminActionMessage" role="status"></div>
+    </section>
+
+    <section id="schedule" class="panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">CLINIC CALENDAR</span>
+          <h2>Appointment schedule</h2>
+          <p class="muted">Approved bookings and requests for the selected month.</p>
+        </div>
+        <div class="schedule-calendar-tools">
+          <div class="schedule-controls">
+            <button class="btn btn-outline btn-small" id="schedulePrev" type="button" aria-label="Previous month">‹</button>
+            <strong id="scheduleMonth"></strong>
+            <button class="btn btn-outline btn-small" id="scheduleNext" type="button" aria-label="Next month">›</button>
+          </div>
+        </div>
+      </div>
+      <div class="schedule-legend"><span><i class="calendar-dot approved-dot"></i>Approved</span><span><i class="calendar-dot pending-dot"></i>Pending</span><span><i class="calendar-dot holiday-dot"></i>Holiday</span></div>
+      <div id="adminCalendar" class="admin-calendar"></div>
+      <p class="holiday-calendar-note">Patient names appear on their booked dates. Holiday dates are marked; clinic hours may differ.</p>
+    </section>
+
+    <section id="payments" class="panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">TRANSACTION MONITORING</span>
+          <h2>Payment records</h2>
+          <p class="muted">Verify payment outside this demo before marking it verified.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>Appointment</th>
+              <th>Method</th>
+              <th>Payment proof</th>
+              <th>Payment status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="adminPayments">
+            <tr><td colspan="6" class="empty-cell">No payment records yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="analytics" class="panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">DESCRIPTIVE ANALYTICS</span>
+          <h2>Clinic activity</h2>
+          <p class="muted">Summaries calculated from browser demo records.</p>
+        </div>
+      </div>
+      <div class="analytics-grid">
+        <article class="chart-card">
+          <h3>Appointments by status</h3>
+          <div id="statusChart" class="bar-list"><p class="muted">No records yet.</p></div>
+        </article>
+        <article class="chart-card">
+          <h3>Most requested procedures</h3>
+          <div id="procedureChart" class="bar-list"><p class="muted">No records yet.</p></div>
+        </article>
+        <article class="chart-card">
+          <h3>Payment methods</h3>
+          <div id="paymentChart" class="bar-list"><p class="muted">No records yet.</p></div>
+        </article>
+        <article class="chart-card">
+          <h3>Monthly booking activity</h3>
+          <div id="monthlyChart" class="bar-list"><p class="muted">No records yet.</p></div>
+        </article>
+        <article class="chart-card success-stats-card">
+          <h3>Success stats</h3>
+          <div class="success-rate"><strong id="appointmentSuccessRate">0%</strong><span>Appointment completion rate</span></div>
+          <div id="successLineChart" class="success-line-chart"></div>
+          <div id="successStatsSummary" class="success-summary">No completed appointments recorded yet.</div>
+          <p class="tiny muted">Calculated as completed appointments divided by all recorded appointments. This tracks scheduling outcomes, not clinical treatment results.</p>
+        </article>
+      </div>
+      <p class="tiny muted">These summaries describe existing records. They do not prove cause and effect or predict future appointments.</p>
+    </section>
+
+    <footer class="dash-footer">
+      Angelica C. Edralin Dental Clinic
+      <span>Demo records are stored in this browser.</span>
+    </footer>
+  </main>
+  <dialog class="proof-dialog" id="paymentProofDialog" aria-labelledby="paymentProofTitle">
+    <div class="proof-dialog-header">
+      <div>
+        <span class="eyebrow">PAYMENT REVIEW</span>
+        <h2 id="paymentProofTitle">Proof of payment</h2>
+      </div>
+      <button class="dialog-close" id="paymentProofClose" type="button" aria-label="Close proof preview">×</button>
+    </div>
+    <div class="proof-preview-frame">
+      <img id="paymentProofImage" alt="Patient's uploaded proof of payment" hidden>
+      <p class="muted" id="paymentProofError" hidden>This payment proof image could not be displayed. The uploaded file may be unavailable or corrupted.</p>
+    </div>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>

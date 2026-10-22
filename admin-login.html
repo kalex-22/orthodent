@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angelica C. Edralin Dental Clinic | Staff Sign In</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-page admin-auth">
+  <header class="topbar">
+    <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
+    <a class="brand" href="index.html">
+      <span class="brand-mark">A</span>
+      <span>ANGELICA C. EDRALIN
+        <small>Clinic management</small>
+      </span>
+    </a>
+    <a class="quiet-link" href="index.html">← Patient portal</a>
+  </header>
+
+  <main class="admin-auth-wrap">
+    <div class="admin-symbol">✦</div>
+    <div class="eyebrow">AUTHORIZED PERSONNEL ONLY</div>
+    <h1>Administrator<br><em>sign in.</em></h1>
+    <p class="muted">Manage appointments, procedures, payment records, and clinic analytics.</p>
+
+    <form id="adminLogin" class="form-stack admin-form">
+      <label>Administrator username
+        <input id="adminUsername" required placeholder="Enter username">
+      </label>
+      <label>Password
+        <input id="adminPassword" required type="password" placeholder="Enter password">
+      </label>
+      <button class="btn btn-primary" type="submit">
+        Access dashboard <span>→</span>
+      </button>
+    </form>
+
+    <div class="form-message" id="adminMessage" role="status"></div>
+
+    <div class="demo-credentials">
+      <strong>Prototype login</strong><br>
+      Username: <code>admin</code> &nbsp;
+      Password: <code>admin123</code><br>
+      <small>Replace this demo login with server-side authentication before real use.</small>
+    </div>
+  </main>
+
+  <footer class="site-footer">© 2026 Angelica C. Edralin Dental Clinic</footer>
+  <script src="app.js"></script>
+</body>
+</html>
